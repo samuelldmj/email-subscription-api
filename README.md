@@ -1,4 +1,5 @@
-Email Subscription API
+## Email Subscription API
+
 A simple Laravel API for subscribing users to an email list, with validation and confirmation emails.
 Requirements
 
@@ -7,25 +8,32 @@ Laravel 11+
 MySQL or any supported database
 Mailtrap (or similar) for email testing
 
-Setup Instructions
+## Setup Instructions
 
+```bash
 Clone the repository:git clone <your-repo-url>
 cd email-subscription-api
+```
 
+```bash
 Install dependencies:composer install
+```
 
 Copy .env.example to .env and configure:
 Database credentials (DB*\* variables).
 Mailtrap credentials (MAIL*\* variables).
 
+```bash
 Generate application key:php artisan key:generate
 
 Run migrations:php artisan migrate
 
 Start the server:php artisan serve
+```
 
-API Usage
+## API Usage
 
+```json
 Endpoint: POST /api/subscribe
 Body:{
 "email": "user@example.com"
@@ -42,13 +50,14 @@ Error Response (e.g., validation failure):{
 "email": ["This email is already subscribed."]
 }
 }
+```
 
-Testing
+## Testing
 
 Use Postman to test the /api/subscribe endpoint.
 Verify emails in Mailtrap.
 Check the subscribers table in your database.
 
-Notes
+## Notes
 
 Validation is handled in the SubscriberController using Laravel’s Validator facade.
